@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -31,11 +32,16 @@ export class AppComponent {
   fileSizes = [10, 100, 1000, 10000, 100000, 1000000, 10000000];
   largeFileSize = Math.pow(10, 15);
   isOpen = true;
+  constructor(private router: Router) { }
 
   toggle() {
     this.isOpen = !this.isOpen;
+    this.router.navigateByUrl('');
   }
   update(event) {
     console.log('event', event);
+  }
+  templateDriven() {
+      this.router.navigateByUrl('template');
   }
 }
