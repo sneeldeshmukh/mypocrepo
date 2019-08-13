@@ -1,0 +1,16 @@
+
+<!-- <div>
+  <p *ngFor="let p of fileSizes">
+    {{ p | formatFileSize:false }}
+  </p>
+  <p>
+    {{ largeFileSize | formatFileSize:true:"SD"}}
+  </p>
+</div>
+<div  (click)="toggle()" [@openClose]="isOpen ? 'open': 'closed'" class="open-close-container">
+  <p>
+    The box is now {{isOpen ? 'Open': 'Closed'}} !
+  </p>
+</div> -->
+<button class="button"  appCustomDirective [input1]="true" (update)="update($event)" (click)="toggle()">Toggle</button>
+<router-outlet></router-outlet>

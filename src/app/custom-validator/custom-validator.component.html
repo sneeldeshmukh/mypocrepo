@@ -1,0 +1,8 @@
+<p>custom-validator works!</p>
+<div>
+    <form [formGroup]="customValidForm">
+        <input type="text" formControlName="name">
+        <div *ngIf="customValidForm.controls.name.errors?.required">Error Required</div>
+        <div *ngIf="customValidForm.controls.name.errors?.invalid">Error Custom</div>
+    </form>
+</div>
