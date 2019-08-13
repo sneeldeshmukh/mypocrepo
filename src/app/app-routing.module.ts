@@ -2,6 +2,7 @@ import { NgModule, Injectable } from '@angular/core';
 import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { CustomValidatorComponent } from './custom-validator/custom-validator.component';
 import { UserService } from './services/user.service';
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 
 export class AlwaysAuthGuard implements CanActivate {
   canActivate() {
@@ -25,7 +26,9 @@ export class LoggedInAuthGuard implements CanActivate {
 }
 }
 
-const routes: Routes = [{ path: '', component: CustomValidatorComponent, canActivate: [AlwaysAuthGuard, LoggedInAuthGuard] }];
+const routes: Routes = [
+  { path: '', component: CustomValidatorComponent, canActivate: [AlwaysAuthGuard, LoggedInAuthGuard] },
+  { path: 'template', component: TemplateDrivenComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
